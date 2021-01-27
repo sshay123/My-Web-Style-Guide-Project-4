@@ -1,0 +1,57 @@
+@media (min-width: $break-m) {
+
+  %block {
+    @include disp(block, auto, auto);
+  }
+
+  .container {
+    max-width: 1400px;
+    @extend %block;
+  }
+
+  .centered {
+    @extend %block;
+  }
+
+  .row {
+    flex-direction: row;
+  }
+
+  [class^=col] {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
+    & + & {
+      margin-left: 10px;
+    }
+  }
+
+  @each $flex-basis, $pct in $flex-b { //background colours
+    .col-#{$flex-basis} {
+      flex-basis: $pct;
+    }
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    &-link {
+      flex-basis: 100px;
+    }
+  }
+
+  .btn {
+    padding: 10px 30px;
+    & + & {
+      margin-left: 10px;
+    }
+
+  }
+
+  .logo {
+    @include disp($marg-l: initial, $marg-r: initial);
+  }
+
+}

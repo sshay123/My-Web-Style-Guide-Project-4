@@ -1,0 +1,22 @@
+%img {
+  @include disp(block, auto, auto);
+}
+
+.img {
+  &-avatar {
+    @extend %img;
+    margin-top: 10px;
+    max-width: $full;
+    max-height: $full;
+  }
+  &-frame {
+    @extend %img;
+    margin-top: 10px;
+    max-width: $full;
+    padding: 13px;
+    border: 1px solid #ccc;
+  }
+  &-logo {
+    @extend %img;
+  }
+}

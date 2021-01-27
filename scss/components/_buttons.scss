@@ -1,0 +1,20 @@
+%btn {
+  margin-top: 15px;
+  width: $full;
+  color: $white;
+  border: none;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+//Buttons Background Colours and Extend
+@each $btn, $color in $btn-bg {
+  .btn.#{$btn} {
+    background-color: $color;
+    @extend %btn;
+    &:hover { 
+        background-color: lighten($color, 15%);
+    }
+  }
+}
